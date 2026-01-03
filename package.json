@@ -1,0 +1,44 @@
+{
+  "name": "wetube-reloaded",
+  "version": "1.0.0",
+  "description": "wetube",
+  "homepage": "https://github.com/natalielee25/wetube-reloaded#readme",
+  "bugs": {
+    "url": "https://github.com/natalielee25/wetube-reloaded/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/natalielee25/wetube-reloaded.git"
+  },
+  "scripts": {
+    "dev": "nodemon",
+    "assets": "webpack"
+  },
+  "license": "ISC",
+  "author": "Natalie",
+  "type": "commonjs",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "connect-mongo": "^6.0.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "express-session": "^1.18.2",
+    "morgan": "^1.10.1",
+    "multer": "^2.0.2",
+    "pug": "^3.0.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/node": "^7.28.0",
+    "@babel/preset-env": "^7.28.5",
+    "babel-loader": "^10.0.0",
+    "css-loader": "^7.1.2",
+    "mini-css-extract-plugin": "^2.9.4",
+    "nodemon": "^3.1.11",
+    "sass": "^1.97.1",
+    "sass-loader": "^16.0.6",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.104.1",
+    "webpack-cli": "^6.0.1"
+  }
+}
