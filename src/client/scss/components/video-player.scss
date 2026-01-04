@@ -1,0 +1,199 @@
+#videoContainer {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  background-color: #000;
+
+  video {
+    width: 100%;
+    height: auto;
+    display: block;
+    background-color: black;
+    outline: none;
+    object-fit: contain;
+  }
+
+  .videoControls {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
+    
+    &.showing {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    
+    align-items: center;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 10px;
+    width: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 15px;
+    justify-content: space-between;
+    background-color: rgba(15, 17, 23, 0.9);
+    padding: 15px 20px;
+    box-sizing: border-box;
+    z-index: 10;
+    
+    .videoControls__play {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      
+      .videoControls__playBtn {
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 20px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+      
+      .videoControls__time {
+        font-size: 14px;
+        color: white;
+        white-space: nowrap;
+      }
+    }
+    
+    .videoControls__timeline {
+      width: 100%;
+      position: relative;
+      
+      input[type="range"] {
+        width: 100%;
+        height: 5px;
+        -webkit-appearance: none;
+        appearance: none;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 5px;
+        outline: none;
+        cursor: pointer;
+        
+        &::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 15px;
+          height: 15px;
+          background: #ff0000;
+          border-radius: 50%;
+          cursor: pointer;
+          
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+        
+        &::-moz-range-thumb {
+          width: 15px;
+          height: 15px;
+          background: #ff0000;
+          border-radius: 50%;
+          cursor: pointer;
+          border: none;
+          
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+    
+    .videoControls__volume {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      
+      span {
+        cursor: pointer;
+        color: white;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        
+        &:hover {
+          opacity: 0.8;
+        }
+        
+        i {
+          font-size: 20px;
+        }
+      }
+      
+      input[type="range"] {
+        width: 80px;
+        height: 5px;
+        -webkit-appearance: none;
+        appearance: none;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 5px;
+        outline: none;
+        cursor: pointer;
+        
+        &::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 12px;
+          height: 12px;
+          background: white;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+        
+        &::-moz-range-thumb {
+          width: 12px;
+          height: 12px;
+          background: white;
+          border-radius: 50%;
+          cursor: pointer;
+          border: none;
+        }
+      }
+    }
+    
+    .videoControls__fullScreen {
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 20px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+/* 브라우저 기본 video UI 완전 제거 */
+#videoContainer video {
+  -webkit-appearance: none;
+}
+
+#videoContainer video::-webkit-media-controls,
+#videoContainer video::-webkit-media-controls-panel,
+#videoContainer video::-webkit-media-controls-play-button,
+#videoContainer video::-webkit-media-controls-start-playback-button,
+#videoContainer video::-webkit-media-controls-timeline,
+#videoContainer video::-webkit-media-controls-volume-slider {
+  display: none !important;
+  -webkit-appearance: none !important;
+}
+
+#videoContainer video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
