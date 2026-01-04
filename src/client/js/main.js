@@ -1,2 +1,1 @@
-import "../scss/styles.scss";
-console.log("🔥 main.js loaded");
+import '../scss/styles.scss';

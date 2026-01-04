@@ -11,9 +11,12 @@
     "url": "git+https://github.com/natalielee25/wetube-reloaded.git"
   },
   "scripts": {
-    "dev": "nodemon",
-    "assets": "webpack"
+    "dev": "nodemon --exec babel-node src/init.js",
+    "assets": "webpack --config webpack.config.js --mode=development",
+    "start:dev": "concurrently \"npm run assets -- --watch\" \"npm run dev\""
   },
+
+  "start:dev": "concurrently \"npm run assets -- --watch\" \"npm run dev\"",
   "license": "ISC",
   "author": "Natalie",
   "type": "commonjs",

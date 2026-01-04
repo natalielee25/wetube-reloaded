@@ -1,5 +1,6 @@
 require("dotenv").config();
 import express from "express";
+import path from "path";
 import morgan from "morgan";
 import session from "express-session";
 import MongoStore from "connect-mongo"
@@ -28,7 +29,7 @@ app.use(session({
 );
 app.use(localsMiddleware);
 app.use("/uploads", express.static("uploads"));
-app.use("/assets", express.static("assets"));
+app.use('/assets', express.static(path.join(process.cwd(), 'assets')));
 app.use("/", rootRouter);
 app.use("/videos", videoRouter);
 app.use("/users", userRouter);
